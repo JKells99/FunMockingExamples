@@ -28,10 +28,11 @@ For example, if a service depends on a database or an API, we can "mock" that de
 Mocking is essential for writing **clean, fast, reliable, and independent** unit tests. Here are the key reasons to use it:
 
 1. **Isolation**: Test your class in isolation without depending on real external systems like databases, APIs, or file systems.
-2. **Speed**: Avoid slow network/database operations. Mocks are lightweight and fast.
-3. **Predictability**: Control the exact behavior of a dependency (e.g., always return a specific value).
-4. **Test Hard-to-Reach Code**: Simulate scenarios like exceptions, timeouts, or unavailable services.
-5. **Behavior Verification**: Ensure certain methods were called with specific arguments (e.g., "Did we save this user to the database?").
+2. **Cost Saving**: Mocking simulates API calls without hitting the database, saving money—especially during frequent tests by multiple developers.
+3. **Speed**: Avoid slow network/database operations. Mocks are lightweight and fast.
+4. **Predictability**: Control the exact behavior of a dependency (e.g., always return a specific value).
+5. **Test Hard-to-Reach Code**: Simulate scenarios like exceptions, timeouts, or unavailable services.
+6. **Behavior Verification**: Ensure certain methods were called with specific arguments (e.g., "Did we save this user to the database?").
 
 ---
 
