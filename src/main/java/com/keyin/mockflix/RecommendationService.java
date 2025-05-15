@@ -27,4 +27,11 @@ public class RecommendationService {
                 .toList();
 
     }
+    public List<String> listAllShowsByFirstCharacter(char character) {
+        return tvShowClient.getTvShows().stream()
+                .filter(show -> show.getTitle().charAt(0) == character)
+                .map(TvShow::getTitle)
+                .toList();
+
+    }
 }
