@@ -1,2 +1,7 @@
-package com.keyin.mockflix;public interface TvShowClient {
+package com.keyin.mockflix;
+
+import java.util.List;
+
+public interface TvShowClient {
+    List<TvShow> getTvShows();
 }
