@@ -24,4 +24,12 @@ public class TvShow {
     public void setGenre(String genre) {
         this.genre = genre;
     }
+
+    @Override
+    public String toString() {
+        return "TvShow{" +
+                "title='" + title + '\'' +
+                ", genre='" + genre + '\'' +
+                '}';
+    }
 }
