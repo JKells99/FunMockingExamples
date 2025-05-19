@@ -17,6 +17,7 @@ public class MissionControlTest {
 
     private MissionControl missionControl;
 
+    // This method will run before each test to help avoid code duplication
     @BeforeEach
     void setUp() {
         missionControl = new MissionControl(spaceWeatherChecker); // ✅ Inject the mock here
