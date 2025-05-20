@@ -23,6 +23,18 @@ For example, if a service depends on a database or an API, we can "mock" that de
 ```
 ---
 
+OR
+## Spring Boot Starter Test
+```
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <version>3.4.5</version>
+    <scope>test</scope>
+</dependency>
+```
+
 ##  Why Use Mocking?
 
 Mocking is essential for writing **clean, fast, reliable, and independent** unit tests. Here are the key reasons to use it:
