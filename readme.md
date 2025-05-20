@@ -24,7 +24,7 @@ For example, if a service depends on a database or an API, we can "mock" that de
 ---
 
 OR
-## Spring Boot Starter Test
+## Spring Boot Starter Test (Mockito is included in this dependency)
 ```
 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
 <dependency>
