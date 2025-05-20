@@ -74,4 +74,13 @@ public class PoliceStation {
 
         this.policeCases.add(policeCase);
     }
+
+    public void deletePoliceCase(String caseNumber) {
+        for(PoliceCase policeCase : policeCases){
+            if(policeCase.getCaseNumber().equals(caseNumber)){
+                policeCases.remove(policeCase);
+                break;
+            }
+        }
+    }
 }
