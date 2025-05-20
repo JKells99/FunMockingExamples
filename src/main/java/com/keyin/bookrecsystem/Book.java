@@ -1,5 +1,7 @@
 package com.keyin.bookrecsystem;
 
+import java.util.List;
+
 public class Book {
     private int bookId;
     private String title;
@@ -47,6 +49,8 @@ public class Book {
     public void setGenre(String genre) {
         this.genre = genre;
     }
+
+
 
     @Override
     public String toString() {

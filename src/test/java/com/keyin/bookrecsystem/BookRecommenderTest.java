@@ -1,4 +1,5 @@
 package com.keyin.bookrecsystem;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.List;
@@ -31,12 +32,15 @@ public class BookRecommenderTest {
                 new Book(9,"The Alchemist","Author 9", "Fiction"),
                 new Book(10,"The Hobbit","Author 10", "Non Fiction")
         );
+
+
+        when(bookCatalog.getAllBooks()).thenReturn(books);
+
     }
 
 
     @Test
     public void recommendRandomFictionBook(){
-        when(bookCatalog.getAllBooks()).thenReturn(books);
 
         Book rec = bookRecommender.recommendByGenre("Fiction");
 
@@ -47,6 +51,25 @@ public class BookRecommenderTest {
         assertNotEquals("Non Fiction", rec.getGenre());
         assertNotEquals("Fiction/Thriller", rec.getGenre());
         assertNotEquals("HS Book", rec.getGenre());
+    }
+    @Test
+    public void recommendRandomFictionThrillerBook(){
+
+        Book rec = bookRecommender.recommendByGenre("Fiction/Thriller");
+
+        System.out.println("Recommended Book: " + rec.getTitle());
+
+        assertEquals("Fiction/Thriller", rec.getGenre());
+        assertNotEquals("Non Fiction", rec.getGenre());
+        assertNotEquals("Fiction", rec.getGenre());
+        assertNotEquals("HS Book", rec.getGenre());
+    }
+    @Test
+    public void recommendBookWithWrongGenreError(){
+
+        Assertions.assertThrows(RuntimeException.class, () -> {
+            bookRecommender.recommendByGenre("Yes By");
+        });
     }
 
 
