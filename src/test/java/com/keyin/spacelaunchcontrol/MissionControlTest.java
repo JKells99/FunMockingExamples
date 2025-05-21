@@ -9,41 +9,41 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class) // ✅ This is essential to make @Mock work
+@ExtendWith(MockitoExtension.class) 
 public class MissionControlTest {
 
     @Mock
-    private SpaceWeatherChecker spaceWeatherChecker; // ✅ Mockito will inject this
+    private SpaceWeatherChecker spaceWeatherChecker; 
 
     private MissionControl missionControl;
 
     // This method will run before each test to help avoid code duplication
     @BeforeEach
     void setUp() {
-        missionControl = new MissionControl(spaceWeatherChecker); // ✅ Inject the mock here
+        missionControl = new MissionControl(spaceWeatherChecker); 
     }
 
     @Test
     void testLaunchFailure() {
-        // Arrange
-        when(spaceWeatherChecker.isSafeToLaunch()).thenReturn(false); // ✅ Tell the mock what to do
+        
+        when(spaceWeatherChecker.isSafeToLaunch()).thenReturn(false);
 
-        // Act
+       
         String result = missionControl.launchMission();
 
-        // Assert
+        
         assertEquals(result, "Mission is scrubbed due to weather conditions.");
     }
 
     @Test
     void testLaunchSuccess() {
-        // Arrange
+        
         when(spaceWeatherChecker.isSafeToLaunch()).thenReturn(true);
 
-        // Act
+        
         String result = missionControl.launchMission();
 
-        // Assert
+        
         assertEquals(result, "Mission is a go!");
     }
 }
