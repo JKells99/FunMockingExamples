@@ -6,17 +6,13 @@ import org.junit.jupiter.api.Test;
 
 public class UserServiceTest {
 
-    UserService userService = new UserService(new UserRepoImpl());
-    String name;
-    String email;
-    String password;
-
-    String name1;
-    String email2;
-    String password3;
+    private UserService userService;
+    private String name, email, password;
+    private String name1, email2, password3;
 
     @BeforeEach
     public void setUp() {
+        userService = new UserService(new UserRepoImpl());
         name = "Jordan";
         email = "J_j.com";
         password = "1234";
