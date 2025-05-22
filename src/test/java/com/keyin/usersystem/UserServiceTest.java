@@ -12,7 +12,7 @@ public class UserServiceTest {
 
     @BeforeEach
     public void setUp() {
-        userService = new UserService(new UserRepoImpl());
+        userService = new UserService(new UserRepository());
         name = "Jordan";
         email = "J_j.com";
         password = "1234";

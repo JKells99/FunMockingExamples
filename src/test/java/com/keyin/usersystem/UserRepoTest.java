@@ -53,6 +53,7 @@ public class UserRepoTest {
     @Test
     void testGettingALlUsers(){
         when(userRepository.getAllUsers()).thenReturn(List.of(user,user1,user2));
+        System.out.println(userService.getAllUsers());
         Assertions.assertEquals(3, userService.getAllUsers().size());
         Assertions.assertTrue(userService.getAllUsers().contains(user));
         Assertions.assertTrue(userService.getAllUsers().contains(user1));
