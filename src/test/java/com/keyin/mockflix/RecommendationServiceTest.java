@@ -29,7 +29,6 @@ public class RecommendationServiceTest {
     @Test
     void testRecAction(){
         TvShowClient mockClient = Mockito.mock(TvShowClient.class);
-
         when(mockClient.getTvShows()).thenReturn(tvShows);
         RecommendationService recommendationService = new RecommendationService(mockClient);
         String rec = recommendationService.recommendTvShow("Action");

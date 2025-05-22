@@ -89,10 +89,14 @@ public class Store {
     }
 
     public int employeeCount(){
-
-        return employees.size()+1;
+        return employees.size();
 
     }
+
+    public int inventoryCount(){
+        return inventoryItems.size();
+    }
+
 
 
 
