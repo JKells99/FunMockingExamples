@@ -11,7 +11,6 @@ public class EmployeeTest {
 
     @Test
     void testEmployeeCreation() {
-        // Test creating an employee
         Employee employee = new Employee(1, "John Doe","Manager");
         // Add assertions to verify the employee creation
         Assertions.assertEquals(1, employee.getEmployeeIdd());
@@ -21,7 +20,6 @@ public class EmployeeTest {
 
     @Test
     void testEmployeeUpdate() {
-        // Test updating an employee
         Employee employee = new Employee(1, "John Doe","Manager");
         employee.setName("Jane Doe");
         employee.setPosition("Senior Manager");
@@ -38,7 +36,6 @@ public class EmployeeTest {
         employee.setName(null);
         employee.setPosition(null);
 
-        // Add assertions to verify the employee deletion
         Assertions.assertEquals(0, employee.getEmployeeIdd());
         Assertions.assertNull(employee.getName());
         Assertions.assertNull(employee.getPosition());

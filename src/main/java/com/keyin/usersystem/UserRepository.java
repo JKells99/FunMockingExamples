@@ -12,6 +12,7 @@ public class UserRepository {
         if(user.getName().isEmpty() || user.getEmail().isEmpty() || user.getPassword().isEmpty()) {
             return false;
         }
+        // validate email in regx
         // Simulate saving the user to a database
         // In a real implementation, you would save the user to a database here
         // For this example, we'll just print the user details
@@ -21,6 +22,9 @@ public class UserRepository {
 
     List<User> getAllUsers()//<-- Pretend that these make a db call for us
     {
+        System.out.println("Getting all users from the database...");
+        // wait for 2 seconds
+
         return List.of(
                 new User("Jordan", "J_j.com", "1234"),
                 new User("Jordan1", "J1_j.com", "12234")
